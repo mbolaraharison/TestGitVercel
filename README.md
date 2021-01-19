@@ -1,27 +1,46 @@
-# TestGitVercel
+## Déploiement avec Vercel
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
+4- vercel --version
 
-## Development server
+5- ng new DeploiementAvecAngular
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+6- vercel
 
-## Code scaffolding
+7- vercel list
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+8- vercel logs deploiement-avec-angular-g1dxh84gc.vercel.app
 
-## Build
+9- vercel inspect deploiement-avec-angular-g1dxh84gc.vercel.app
+Cette commande sert à récupérer des informations sur un déploiement en faisant un état des lieux des fichiers présents dans le déploiement
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+10- Les variables d'environnement servent à être appelées partout dans un environnement et surtout pendant les étapes de compilation et d'exécution du code du projet.
 
-## Running unit tests
+11- vercel env add plain VAR1 production
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+12- vercel env list
 
-## Running end-to-end tests
+13- Les secrets sont des variables d'environnements chiffrées utilisées dans l'environnement de production
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+14- vercel secrets add SECRET1 "Some secret"
 
-## Further help
+15- Les trois environnements :
+- Développement
+- Preview
+- Production
+Il y a plusieurs versions non seulement pour permettre plus d'organisations mais surtout pour permettre de bien vérifier les changements avant de le mettre à disposition du public
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+18- https://test-git-vercel.vercel.app/
+
+19- Un pull request permet de demander à d'autres développeurs de vérifier le code avant de l'ajouter dans une branche principale
+
+20- Vercel essaie de déployer automatiquement le pull request sur l'environnement de preview
+
+21- 	- Git associe mon environnement de production à la branche (pull request) nouvellement mergée
+- Le pull request est pris en compte directement dans l'environnement de production dès qu'il est mergé.
+- Le workflow d'une feature de son développement à sa production (Simplement) :
+- Développement (Environnement de Développement)
+- Pull request (Environnement de Preview)
+- Merge (Environnement de Production)
+
+22- Serverless veut dire que l'application front-end utilise des directives d'un langage ou un framework de backend pour comprendre les requêtes HTTP et donner des réponses.
+C'est pratique de faire ainsi car on peut simuler les langages ou frameworks de backend sans pour autant passer par une api.
